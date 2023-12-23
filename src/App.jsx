@@ -5,7 +5,7 @@ import KanbanBoard from "./components/KanbanBoard";
 function App() {
   return (
     <div className="font-sans">
-      <div className="bg-gray-800 text-white py-4 text-center">
+      <div className="bg-gray text-white py-4 text-center">
         <h1 className="text-4xl font-bold">
           Kanban Board
           <span className="text-sm block font-light">

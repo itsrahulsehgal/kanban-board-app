@@ -92,7 +92,7 @@ const KanbanBoard = () => {
   };
 
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto">
       {/* Dropdowns */}
       <div className="flex space-x-4 mb-4 items-center">
   <div className="mr-4"> {/* Added margin-right here */}
@@ -135,7 +135,8 @@ const KanbanBoard = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {Object.keys(displayedTickets).map((group, index) => (
           <div key={index} className="mb-4">
-            <h2 className="text-2xl font-bold mb-2">{group}</h2>
+            {/* Display the group name with the count of tickets */}
+            <h2 className="text-2xl font-bold mb-2">{`${group} (${displayedTickets[group].length})`}</h2>
             <div className="space-y-4">
               {(Array.isArray(displayedTickets[group]) ? displayedTickets[group] : []).map(
                 (ticket) => (
