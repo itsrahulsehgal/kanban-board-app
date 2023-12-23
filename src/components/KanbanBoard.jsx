@@ -1,4 +1,3 @@
-// src/components/KanbanBoard.js
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../api";
 import TicketCard from "./TicketCard";
@@ -20,7 +19,6 @@ const KanbanBoard = () => {
         setDisplayedTickets(initialGroupedTickets);
       } catch (error) {
         console.error("Error fetching data:", error);
-        // Handle error
       }
     };
 
@@ -31,7 +29,6 @@ const KanbanBoard = () => {
     let groupedTickets = [];
 
     if (grouping === "status") {
-      // Add custom status columns
       groupedTickets = groupBy(items, "status");
       groupedTickets["Done"] = groupedTickets["Done"] || [];
       groupedTickets["Cancelled"] = groupedTickets["Cancelled"] || [];
@@ -93,49 +90,46 @@ const KanbanBoard = () => {
 
   return (
     <div className="container mx-auto">
-      {/* Dropdowns */}
       <div className="flex space-x-4 mb-4 items-center">
-  <div className="mr-4"> {/* Added margin-right here */}
-    <label htmlFor="grouping" className="text-white">
-      Grouping:
-    </label>
-  </div>
-  <div>
-    <select
-      id="grouping"
-      value={selectedGrouping}
-      onChange={(e) => setSelectedGrouping(e.target.value)}
-      className="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-    >
-      <option value="status">Status</option>
-      <option value="user">User</option>
-      <option value="priority">Priority</option>
-    </select>
-  </div>
+        <div className="mr-4">
+          <label htmlFor="grouping" className="text-white">
+            Grouping:
+          </label>
+        </div>
+        <div>
+          <select
+            id="grouping"
+            value={selectedGrouping}
+            onChange={(e) => setSelectedGrouping(e.target.value)}
+            className="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+          >
+            <option value="status">Status</option>
+            <option value="user">User</option>
+            <option value="priority">Priority</option>
+          </select>
+        </div>
 
-  <div className="mr-4"> {/* Added margin-right here */}
-    <label htmlFor="ordering" className="text-white">
-      Ordering:
-    </label>
-  </div>
-  <div>
-    <select
-      id="ordering"
-      value={selectedOrdering}
-      onChange={(e) => setSelectedOrdering(e.target.value)}
-      className="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
-    >
-      <option value="priority">Priority</option>
-      <option value="title">Title</option>
-    </select>
-  </div>
-</div>
+        <div className="mr-4">
+          <label htmlFor="ordering" className="text-white">
+            Ordering:
+          </label>
+        </div>
+        <div>
+          <select
+            id="ordering"
+            value={selectedOrdering}
+            onChange={(e) => setSelectedOrdering(e.target.value)}
+            className="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+          >
+            <option value="priority">Priority</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+      </div>
 
-      {/* Displayed Tickets */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {Object.keys(displayedTickets).map((group, index) => (
           <div key={index} className="mb-4">
-            {/* Display the group name with the count of tickets */}
             <h2 className="text-2xl font-bold mb-2">{`${group} (${displayedTickets[group].length})`}</h2>
             <div className="space-y-4">
               {(Array.isArray(displayedTickets[group]) ? displayedTickets[group] : []).map(
