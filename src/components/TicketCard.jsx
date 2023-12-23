@@ -45,13 +45,14 @@ const TicketCard = ({ ticket, user }) => {
   return (
     <div className="ticket-main border p-4 rounded-lg shadow-md bg-opacity-30 backdrop-blur-lg backdrop-filter backdrop-blur bg-gray-800 text-white">
       <div className="top-line flex items-center justify-between mb-4">
-        <span className="text-xl font-bold">{ticket.id}</span>
-        <div className="user-icon" style={{ backgroundColor: "#2f4053" }}>
-          <div>{user ? user.name[0].toUpperCase() : "U"}</div>
+        <span className="text-xl font-light">{ticket.id}</span>
+        <div className="user-icon" >
+          <div>
+            {user ? user.name[0].toUpperCase() : "U"}</div>
           <div
             className={`available-icon ${
               user && user.available ? "bg-green-500" : "bg-gray-500"
-            } rounded-full`}
+            } rounded-full border border-white p-1`} // Added border style
           ></div>
         </div>
       </div>
@@ -64,13 +65,13 @@ const TicketCard = ({ ticket, user }) => {
         </div>
         <div className="tag-wrapper flex items-center ml-2">
           {ticket.tag.map((tag, index) => (
-            <div key={index} className="tag flex items-center">
+            <div key={index} className="tag flex items-center border border-white p-1 rounded">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
                 strokeWidth="0"
                 viewBox="0 0 256 256"
-                className="icon rounded-full"
+                className="icon rounded-full p-1" // Added border style
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +79,7 @@ const TicketCard = ({ ticket, user }) => {
               >
                 <path d="M232,128A104,104,0,1,1,128,24,104.13,104.13,0,0,1,232,128Z"></path>
               </svg>
-              <div>{tag}</div>
+              <div className="text-xs text-gray-500">{tag}</div>
             </div>
           ))}
         </div>
