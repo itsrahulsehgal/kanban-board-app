@@ -13,7 +13,7 @@ const TicketCard = ({ ticket, user }) => {
                 viewBox="0 0 24 24"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon"
+                className="icon rounded-full"
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const TicketCard = ({ ticket, user }) => {
                 viewBox="0 0 24 24"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon"
+                className="icon rounded-full"
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const TicketCard = ({ ticket, user }) => {
                 viewBox="0 0 24 24"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon"
+                className="icon rounded-full"
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,12 +69,12 @@ const TicketCard = ({ ticket, user }) => {
     <div className="ticket-main border p-4 rounded-lg shadow-md bg-opacity-30 backdrop-blur-lg backdrop-filter backdrop-blur bg-gray-800 text-white">
       <div className="top-line flex items-center justify-between mb-4">
         <span className="text-xl font-bold">{ticket.id}</span>
-        <div className="user-icon" style={{ backgroundColor: "#2e4053" }}>
+        <div className="user-icon" style={{ backgroundColor: "#2f4053" }}>
           <div>{user ? user.name[0].toUpperCase() : "U"}</div>
           <div
             className={`available-icon ${
               user && user.available ? "bg-green-500" : "bg-gray-500"
-            }`}
+            } rounded-full`}
           ></div>
         </div>
       </div>
@@ -94,7 +94,7 @@ const TicketCard = ({ ticket, user }) => {
                   fill="currentColor"
                   strokeWidth="0"
                   viewBox="0 0 256 256"
-                  className="icon"
+                  className="icon rounded-full"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
