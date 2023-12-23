@@ -126,11 +126,11 @@ const KanbanBoard = () => {
       </div>
 
       {/* Displayed Tickets */}
-      <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {Object.keys(displayedTickets).map((group, index) => (
-          <div key={index}>
-            <h2 className="text-2xl font-bold mb-4">{group}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div key={index} className="mb-4">
+            <h2 className="text-2xl font-bold mb-2">{group}</h2>
+            <div>
               {(Array.isArray(displayedTickets[group]) ? displayedTickets[group] : []).map(
                 (ticket) => (
                   <TicketCard key={ticket.id} ticket={ticket} user={getUserById(ticket.userId)} />

@@ -5,12 +5,12 @@ import KanbanBoard from "./components/KanbanBoard";
 function App() {
   return (
     <div>
-      <header>
+      <div>
         <h1>Kanban Board App</h1>
-      </header>
-      <main>
+      </div>
+      
         <KanbanBoard />
-      </main>
+      
     </div>
   );
 }
