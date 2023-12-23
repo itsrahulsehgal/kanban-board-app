@@ -4,11 +4,11 @@ This project is a simple Kanban Board application built with React+Vite. It allo
 
 ## Deployment
 
-This project is deployed using [Netlify](https://www.netlify.com/).
+This project is deployed using [Vercel](https://vercel.com/).
 
 ### Live Demo
 
-Check out the live demo [here](https://your-app.netlify.app/).
+Check out the live demo [here](https://kanban-board-app-ashy.vercel.app/).
 
 ## Tech Stacks Used
 
