@@ -52,7 +52,7 @@ const TicketCard = ({ ticket, user }) => {
           <div
             className={`available-icon ${
               user && user.available ? "bg-green-500" : "bg-gray-500"
-            } rounded-full border border-white p-1`} // Added border style
+            } rounded-full border border-white p-1`}
           ></div>
         </div>
       </div>
@@ -71,7 +71,7 @@ const TicketCard = ({ ticket, user }) => {
                 fill="currentColor"
                 strokeWidth="0"
                 viewBox="0 0 256 256"
-                className="icon rounded-full p-1" // Added border style
+                className="icon rounded-full p-1"
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
